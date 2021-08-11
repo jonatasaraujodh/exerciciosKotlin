@@ -16,7 +16,7 @@ class Conta(var numeroConta: Int, var saldoConta: Double, var titularConta: Clie
      * Caso seja passado algum valor negativo, a operação não é realizada, sendo
      * exibida mensagem de indisponibilidade.
      */
-    fun depositar(valor: Double){
+    fun depositar(valor: Double): Unit{
        if (valor > 0){
            saldoConta += valor
            println ("Deposito realizado com sucesso! Saldo Disponível: R$ ${saldoConta}")
@@ -33,7 +33,7 @@ class Conta(var numeroConta: Int, var saldoConta: Double, var titularConta: Clie
      * Caso seja passado algum valor negativo, a operação não é realizada, sendo
      * exibida mensagem de indisponibilidade.
      */
-    fun sacar (valor: Double){
+    fun sacar (valor: Double): Unit{
         if (valor <= saldoConta && valor >0){
             saldoConta -= valor
             println ("Saque realizada! Saldo Disponível: R$ ${saldoConta}")
@@ -50,7 +50,7 @@ class Conta(var numeroConta: Int, var saldoConta: Double, var titularConta: Clie
      * Função privada cujo objetivo é o de exibir mensagem padrão quando uma operação
      * não é realizada.
      */
-    private fun exibirMensagem(){
+    private fun exibirMensagem(): Unit{
         print ("Operação não realizada. ")
     }
 }// fim de classe Conta

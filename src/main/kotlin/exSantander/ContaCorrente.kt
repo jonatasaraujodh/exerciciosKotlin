@@ -3,15 +3,18 @@ package exSantander
 /**
  * todo
  */
-class ContaCorrente(saldo: Double, cliente: Cliente,
-                    var limiteChequeEspecial: Double): Conta(saldo, cliente) {
+class ContaCorrente(saldo: Double,
+                    cliente: Cliente,
+                    var limiteChequeEspecial: Double = 0.0
+                    ): Conta(saldo, cliente) {
 
     /**
      * todo
      */
-    override fun sacarValor(valor: Double) {
-
-        if(valor <= saldo){
+    override fun sacarValor(valor: Double):Unit {
+        if (valor <= 0.0){
+            println ("Operação não realizada. Motivo: valor inválido")
+        }else if(valor <= saldo){
             saldo -= valor
             println ("Saque realizado com sucesso. Saldo Disponível: R$ $saldo")
         } else if (valor <= saldo + limiteChequeEspecial ){
@@ -27,10 +30,13 @@ class ContaCorrente(saldo: Double, cliente: Cliente,
     /**
      * todo
      */
-    fun depositarValor(cheque: Cheque) {
+    fun depositarValor(cheque: Cheque):Unit {
         depositarValor(cheque.valor)
     }// fim função depositaValor
 
+    /**
+     * todo
+     */
     fun consultaLimiteSaque(): Double {
         return saldo + limiteChequeEspecial
     }

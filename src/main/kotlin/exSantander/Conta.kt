@@ -3,13 +3,13 @@ package exSantander
 /**
  * todo
  */
-open class Conta (var saldo: Double,
+open class Conta (var saldo: Double = 0.0,
                   var cliente: Cliente){
 
     /**
      * todo
      */
-    open fun depositarValor(valor: Double){
+    open fun depositarValor(valor: Double): Unit{
         if (valor < 0.0){
             println ("Operação não realizada. Motivo: valor inválido")
         } else{
@@ -22,7 +22,7 @@ open class Conta (var saldo: Double,
     /**
      * todo
      */
-    open fun sacarValor(valor: Double){
+    open fun sacarValor(valor: Double):Unit{
 
         if (valor <= 0.0){
             println ("Operação não realizada. Motivo: valor inválido")
