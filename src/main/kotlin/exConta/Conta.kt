@@ -16,7 +16,7 @@ class Conta(var numeroConta: Int, var saldoConta: Double, var titularConta: Clie
      * Caso seja passado algum valor negativo, a operação não é realizada, sendo
      * exibida mensagem de indisponibilidade.
      */
-    fun depositar(valor: Double): Unit{
+    fun depositar(valor: Double){
        if (valor > 0){
            saldoConta += valor
            println ("Deposito realizado com sucesso! Saldo Disponível: R$ ${saldoConta}")

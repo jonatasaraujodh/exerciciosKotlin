@@ -3,10 +3,10 @@ package exSantander
 /**
  * todo
  */
-class ContaPoupanca (saldo: Double,
-                     cliente: Cliente,
+class ContaPoupanca (saldo2: Double,
+                     cliente2: Cliente,
                      var taxaJuros: Double = 0.0
-                     ): Conta(saldo, cliente){
+                     ): Conta(saldo2,cliente2){
 
     /**
      * todo

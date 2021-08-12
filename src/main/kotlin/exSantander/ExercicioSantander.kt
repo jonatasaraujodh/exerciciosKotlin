@@ -8,8 +8,10 @@ fun main(){
     val clienteA = Cliente(1234,"João","1234","12345678910")
 
     println("---------- Operando Conta Poupança ----------")
-    val contaPoupanca = ContaPoupanca (100.0,clienteA,2.5)
-
+//    val contaA = Conta(200.0, clienteA)
+//
+    val clienteB = Cliente(1234,"João","1234","12345678910")
+    val contaPoupanca = ContaPoupanca (100.0,clienteB,2.5)
     println ("Cliente: ${contaPoupanca.consultaCliente()}")
     println ("Saldo disponível: R$ ${contaPoupanca.consultaSaldo()}")
     println ("Total de juros recolhidos: R$ ${contaPoupanca.recolherJuros()}")
